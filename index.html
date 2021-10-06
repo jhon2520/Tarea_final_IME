@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="media_query.css">
+
+    </head>
+    <body>
+        <section>
+            <div class="bg"></div>
+            
+            <header>
+                <div class="toggle"></div>
+                <ul class="navigation">
+                    <li><a class="active" href="#">Inicio</a></li>
+                    <li><a href="#">Libros</a></li>
+                    <li><a href="#">Escritores</a></li>
+                    <li><a href="#">Para niños</a></li>
+                    <li><a href="#">Regala un libro</a></li>
+                    <li><a href="#">Nuestras librerías</a></li>
+                    <li><a href="#">Artículos</a></li>
+                    <li><a href="#">Convenios</a></li>
+                    <li><a href="#">Ferias</a></li>
+                    <li><a href="#">Trueque de libros</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Registrarse</a></li>
+                </ul>
+            </header>
+            
+    
+            
+            <div class="content">
+                <div class="textBox">
+                    <h2 class="name-writter">Edgar Allan Poe</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio corrupti neque ab reprehenderit mollitia maiores temporibus a sed aperiam maxime doloremque nisi corporis, ratione dignissimos non eaque officia distinctio totam aspernatur placeat dolorem rem adipisci.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta sed, iure adipisci suscipit sequi, ipsam asperiores sapiente debitis nesciunt, quaerat qui quia odit. Perferendis adipisci vel delectus pariatur tempore tempora sapiente incidunt repudiandae. Amet, pariatur! Necessitatibus, id. Nam numquam recusandae unde distinctio tenetur commodi, quibusdam nihil perspiciatis, itaque officia reprehenderit.
+                    </p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum at id quod non nemo dolor dignissimos error, laborum debitis vel.</p>
+                <a href="#">Leer más</a>
+            </div>
+            <div class="imgBox">
+                <img src="poe.png" class="writter" alt="">
+            </div>
+        </div>
+        
+        <ul class="thumb">
+            <li data-text="Nevermore..." class="active"><img src="circle.png" onclick="imgSlider('poe.png');changeBgColor('#082032');changeName('Edgar Allan Poe')" alt=""></li>
+            <li data-text="Flores del mal"><img src="circle.png" onclick="imgSlider('Baud.png');changeBgColor('#334756');changeName('Charles Baudelaire')" alt=""></li>
+            <li data-text="Mi señor frodo"><img src="circle.png" onclick="imgSlider('tolkien2.png');changeBgColor('#152D35');changeName('J.R.R. Tolkien')" alt=""></li>
+        </ul>
+            
+            
+        </section>   
+
+        
+        <script>
+
+            //Menu con toggle
+        
+            let menuToggle = document.querySelector(".toggle");
+            let navigation = document.querySelector(".navigation");
+            menuToggle.onclick = function(){
+                menuToggle.classList.toggle("active")
+                navigation.classList.toggle("active")
+        
+            }
+        
+        
+            //Cambiar imagen cuando se hace click
+            function imgSlider(imagen){
+                document.querySelector(".writter").src = imagen;
+            }
+        
+            //cambiar color de fondo
+            function changeBgColor(color){
+                const bg = document.querySelector(".bg");
+                bg.style.background = color;
+            }
+            //cambiar nombre escritor
+            function changeName(nombre){
+                document.querySelector(".name-writter").innerHTML = nombre;
+            }
+        
+        
+        
+        
+            //Agregar clase "Active" a las miniaturas
+        
+            let el = document.querySelectorAll(".thumb li")
+            for (let i = 0; i < el.length; i++) {
+                
+                el[i].onclick = function(){
+                    var c = 0;
+        
+                    //a todos los elementos se le pone la clase check
+                    while(c< el.length){
+                        el[c++].className = "check";
+                    }
+        
+                    //al elemento clickeado se le pone la clase active 
+                    el[i].className = "check active"
+                }
+                
+            }
+        </script>
+        
+    </body>
+</html>
