@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: "poppins";
 }
+html{
+    scroll-behavior: smooth;
+}
 
 section{
     position:  relative;
@@ -40,22 +43,49 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
+    padding: 20px 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    /* background-color: yellow; */
 }
 
 header .logo{
-    position: relative;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    font-size: 5em;
+    display: flex;
 }
+
+header .logo hgroup{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .logo hgroup h1{
+    color: #fff;
+    font-size: 38px;
+    margin-left: 5px;
+}
+
+header .logo hgroup h2{
+    color: #fff;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+
+
+header .logo .logo-img{
+    width: 15%;
+    /* background-color: red; */
+    margin-left: 10%;
+}
+
 header .navigation{
     position: relative;
     display: flex;
+    /* background-color: green; */
+    width: 98%;
 }
 
 header .navigation  li{
@@ -65,10 +95,12 @@ header .navigation li  a{
     display: inline-block;
     color: #fff;
     font-weight: 400;
-    margin: 10px;
+    /* margin: 10px; */
     padding: 8px 15px;
     border-radius: 40px;
     text-decoration: none;
+    margin: 5px;
+    /* background: red; */
 }
 
 
@@ -78,6 +110,7 @@ header .navigation li a:hover{
     color: #333;
 
 }
+
 
 .content{
     position: relative;
@@ -192,4 +225,397 @@ header .navigation li a:hover{
     transform: scale(0.6);
     filter: invert(1);
 
+}
+
+.subir{
+    width: 50px;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    margin-right: 15px;
+    
+}
+
+.subir img{
+    width: 50px;
+    border-radius: 50%;
+    /* background: red; */
+}
+
+
+/*Pagina inicio*/
+
+.inicio{
+    height: 100vh;
+    width: 100%;
+    background: #191A19;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.circulo{
+    position: relative;
+    overflow: hidden;
+}
+
+.circulo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.circulo.imagen-1{
+    width: 600px;
+    height: 600px;
+    float: left;
+    border-radius: 50%;
+    margin: 20px;
+    shape-outside: circle();
+}
+.circulo.imagen-2{
+    width: 300px;
+    height: 300px;
+    float: right;
+    border-radius: 50%;
+    margin: 20px;
+    shape-outside: circle();
+}
+
+.inicio .container h2{
+    font-size: 2.9em;
+    margin-bottom: 10px;
+    text-align: justify;
+    color:#fff
+}
+
+.inicio .container p{
+    text-align: justify;
+    color:#fff;
+    font-size: 1.2em;
+}
+
+.inicio .container .button .button-estilo{
+    display: inline-block;
+    color: #191A19;
+    font-weight: 400;
+    /* margin: 10px; */
+    padding: 8px 15px;
+    border-radius: 40px;
+    text-decoration: none;
+    margin: 15px 5px;
+    background: #fff;
+
+}
+
+
+/*Pagina libros*/
+
+.libros {
+    height: 100vh;
+    width: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.libros hgroup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.libros hgroup h2{
+    font-size: 30px;
+    color: #666;
+}
+
+.libros hgroup h3{
+    color: #666;
+
+}
+
+.libros .container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.libros .container .card{
+    position: relative;
+    width: 250px;
+    height: 400px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.libros .container .card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.libros .container .card .content{
+    position: absolute;
+    bottom: -160px;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    flex-direction: column;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition:  0.5s;
+}
+
+.libros .container .card:hover .content{
+
+    bottom: 0px;
+}
+
+.libros .container .card .content h3{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.1em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.libros .container .card:hover .content .contentBx h3{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.libros .button .button-estilo{
+    background:#191A19;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 150px;
+    transition: 0.5s;
+}
+.libros .button .button-estilo:hover{
+    padding: 10px 30px;
+
+}
+
+/*Pagina niños*/
+
+.ninos{
+    background: #0e171d;
+    height: 120vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.ninos .container-img{
+    background-image: url("leyendo.jpg");
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background: red; */
+    border-radius: 20px;
+    position: relative;
+
+}
+
+.ninos .container-img h3{
+    color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    margin-left: 10px;
+}
+
+.ninos .container-img:hover::after{
+    opacity: 0.5;
+    background-image: linear-gradient(120deg, #33d0ff, #eaee44);
+    content: "";
+    color: rgba(255, 248, 248, 0.8);
+    border-radius: 20px;
+}
+.ninos .container-img:hover::before{
+    content: "Tenemos cientos de libros especiales para ellos \A Todos los métodos de pago \A Prepáralos para el regreso a clases";
+    white-space: pre-wrap;
+    color: rgba(255, 248, 248, 0.8);
+    border-radius: 20px;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    border-radius: 20px;
+}
+.ninos .container-img::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 20px;
+    left: 0;
+    background-image: linear-gradient(120deg, #eaee44, #33d0ff);
+    opacity: 0.4;
+}
+
+.ninos .texto{
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 1s ease-in-out ;
+}
+
+.ninos .texto:hover{
+    box-shadow: 0 0 2px #5da6dd,0 0 8px #5da6dd,0 0 15px #73afddab,0 0 22px #9acff898 ;
+
+}
+
+.ninos .texto h2{
+    color: #fff;
+    font-size: 28px;
+    text-align: center;
+}
+.ninos .texto h3{
+    color: #fff;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    background-color: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+footer .social_icon,
+footer .menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 10px 0;
+}
+
+footer .social_icon li,
+footer .menu li{
+
+    list-style: none;
+}
+
+footer .social_icon li a{
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display:  inline-block;
+    transition: 0.5s;
+}
+
+footer .social_icon li a:hover{
+    transform: translateY(-10px);
+}
+
+footer .menu li a{
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display:  inline-block;
+    text-decoration: none;
+    opacity: 0.65;
+}
+footer .menu li a:hover{
+    opacity: 1;
+}
+
+footer p{
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+
+}
+
+footer .wave{
+
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(wave.png);
+    background-size: 1000px 100px;
+
+}
+
+
+footer .wave#wave1{
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+footer .wave#wave2{
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWave_02 4s linear infinite;
+}
+footer .wave#wave3{
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+}
+footer .wave#wave4{
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWave_02 3s linear infinite;
+}
+@keyframes animateWave{
+    0%{
+        background-position-x:1000px ;
+    }
+    100%{
+        background-position-x: 0px;
+    }
+}
+@keyframes animateWave_02{
+    0%{
+        background-position-x:0 ;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
 }
